@@ -1,0 +1,43 @@
+---
+title: "Assignment1(607)"
+author: "Thierno Diallo"
+date: "2024-02-04"
+output:
+  html_document:
+    df_print: paged
+---
+#                    introduction 
+# This data set helps predict the winner of the 2022 world cup.
+#. Link :  https://github.com/fivethirtyeight/data/tree/master/world-cup-2022 
+
+# first, we are going to load our library and then load the data set 
+```{r setup, include=FALSE}
+
+library(tidyverse)
+library(tinytex)
+wcup <- read_csv("wc_matches.csv")
+```
+# list of team1
+```{r}
+head(wcup$team1)
+```
+#list of team2 
+```{r}
+head(wcup$team2)
+```
+# team with highest score
+```{r}
+wcup$score1 > 3
+```
+# projected score 
+```{r}
+wcup$proj_score1
+
+```
+# graph score1 over team1
+```{r}
+ggplot(wcup= NULL, mapping = aes( wcup$team1, wcup$score1)) + geom_boxplot()
+```
+#                                   conclusion
+# using some r function, we are able to understand the data set to predict the winner of the 2022 world cup 
+
